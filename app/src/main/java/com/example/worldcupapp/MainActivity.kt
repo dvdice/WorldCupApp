@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val wcArray = arrayOf("Germany", "Brazil", "England", "Spain", "Qatar")
 
         val arrayAdapter: ArrayAdapter<*>
-        arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, wcArray)
+        arrayAdapter = ArrayAdapter(this, R.layout.list_item, R.id.textView, wcArray)
 
         listView.adapter = arrayAdapter
 
