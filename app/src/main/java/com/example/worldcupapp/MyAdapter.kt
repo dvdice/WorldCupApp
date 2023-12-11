@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import org.w3c.dom.Text
@@ -42,6 +43,11 @@ class MyAdapter(private var activity: Activity, private var items:ArrayList<Coun
         viewHolder.txtName?.text = countries.name
         viewHolder.txtCups?.text = countries.cupWins
         viewHolder.flagImg?.setImageResource(countries.flagImg)
+
+        view?.setOnClickListener {
+            Toast.makeText(activity, "You chose: ${countries.name}", Toast.LENGTH_SHORT).show()
+        }
+
         return view as View
     }
 
@@ -49,6 +55,7 @@ class MyAdapter(private var activity: Activity, private var items:ArrayList<Coun
         var txtName: TextView? = null
         var txtCups: TextView? = null
         var flagImg: ImageView? = null
+
 
         init {
             this.txtName = row?.findViewById(R.id.countryName)
